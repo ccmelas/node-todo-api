@@ -6,14 +6,14 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     console.log('Connected successfully');
     const db = client.db('TodoApp');
 
-    // db.collection('Todos').insertOne({
-    //     text: 'Another Next up to do',
-    //     completed: false
-    // }, (err, result) => {
-    //     if(err) return console.log('Insert Failed');
+    db.collection('Todos').insertOne({
+        text: 'Another Next up to do',
+        completed: false
+    }, (err, result) => {
+        if(err) return console.log('Insert Failed');
 
-    //     console.log('Success: ', result.ops);
-    // });
+        console.log('Success: ', result.ops);
+    });
 
     db.collection('Users').insertOne({
         name: 'Chiemela Chinedum',
